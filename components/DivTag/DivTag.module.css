@@ -20,3 +20,21 @@
 .ghost {
     border: 1px solid var(--gray-light);
 }
+
+.blue {
+    background: #3E1FFA;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.grey {
+    background: #B3C0D9;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.primary {
+    border: 1px solid var(--primary);
+    background: none;
+    color: var(--primary);
+}
