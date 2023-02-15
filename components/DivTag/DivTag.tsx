@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { DivTagProps } from "./DivTag.props";
 import styles from './DivTag.module.css';
 import cn from 'classnames';
 
-export const DivTag = ({ size = 'm', children, className, ...props }: DivTagProps): JSX.Element => {
+export const DivTag = ({ size = 'm', children, color = 'ghost', href, className, ...props }: DivTagProps): JSX.Element => {
+
     return (
         <div
-            className={cn(styles.p, className, {
+            className={cn(styles.tag, className, {
                 [styles.s]: size == 's',
                 [styles.m]: size == 'm',
+                [styles.ghost]: color == 'ghost',
+                [styles.blue]: color == 'blue',
+                [styles.grey]: color == 'grey',
+                [styles.primary]: color == 'primary',
             })}
             {...props}
         >
-            {children}
+            {
+                href
+                    ? <a href={href}>{children}</a>
+                    : <>{children}</>
+            }
         </div>
     )
 }
